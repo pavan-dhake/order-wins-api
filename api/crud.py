@@ -1,12 +1,16 @@
+from datetime import date as dt_date
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from .models import Order
 
 async def get_orders_for_date(session: AsyncSession, date_ymd: str, exchange: str | None = None):
-    q = select(Order).where(Order.announcement_date_ist == date_ymd)
+    target = dt_date.fromisoformat(date_ymd)  # '2025-08-19' -> date(2025, 8, 19)
+
+    q = select(Order).where(Order.announcement_date_ist == target)
     if exchange and exchange in ("NSE", "BSE"):
         q = q.where(Order.exchange == exchange)
     q = q.order_by(Order.announcement_time_ist.desc())
+
     res = await session.execute(q)
     rows = res.scalars().all()
     return [serialize_order(o) for o in rows]

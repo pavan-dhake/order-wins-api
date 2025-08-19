@@ -1,0 +1,22 @@
+[
+  {
+    "company_name": "Larsen & Toubro Limited",
+    "symbol": "LT",
+    "isin": "INE018A01030",
+    "exchange": "BSE",
+    "sector": "Capital Goods / EPC",
+    "order_value_inr": 10250000000,
+    "currency_original": "INR",
+    "original_value": "₹1,025 crore",
+    "value_confidence": "exact",
+    "client_name": "NHAI",
+    "order_type": "EPC Contract",
+    "duration": "24 months",
+    "geography": "Maharashtra",
+    "business_unit": "Transportation Infrastructure",
+    "announcement_time_ist": "2025-08-19T10:15:00+05:30",
+    "source_type": "BSE",
+    "source_url": "https://www.bseindia.com/corporates/ann.aspx?id=example",
+    "pdf_url": "#"
+  }
+]
